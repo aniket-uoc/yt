@@ -35,13 +35,16 @@
             </button>
             <div class="dropdown-menu">
                 <% info.forEach((format)=> { %>
+
+                    <% if(format.hasAudio) {   %>
+
                     <a class="dropdown-item" href="<%= format.url %>" 
                         >
                         <%= format.mimeType.split(";")[0] %>
                             <%= format.hasVideo ? format.height + "p" : "" %>
                                 <% if(!format.hasAudio) { %>
                                     <i class="fas fa-volume-mute text-danger"></i>
-                                    <% } %>
+                                    <% }} %>
                     </a>
                     <% }); %>
             </div>
